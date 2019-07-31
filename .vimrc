@@ -12,7 +12,6 @@ set smartindent
 set autoindent
 set nocompatible
 set clipboard:unnamed
-set backspace=2
 filetype plugin on
 filetype plugin indent on
 
