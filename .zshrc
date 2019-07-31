@@ -26,7 +26,6 @@ ngrokFunction() {
 alias lock='automator ~/Library/Services/Start\ Screen\ Saver.workflow &>/dev/null';
 alias pass='password="$(openssl rand -base64 8)"; echo ${password/%?/} | pbcopy; echo Copied to clipboard!'
 alias drop=uploadToDropbox;
-alias clear='cd && clear;'
 alias cfp=copyFilePath;
 alias ngrok=ngrokFunction
 alias school='cd ~/Documents/School/Semesters/Fall\ 2019'
