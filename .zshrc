@@ -2,12 +2,12 @@
 export ZSH=/Users/henry/.oh-my-zsh
 
 copyFilePath() {
-	file="$1"
-	greadlink -f $file | pbcopy
+    file="$1"
+    greadlink -f $file | pbcopy
 }
 
 trimCharacter() {
-	echo ${1/%?/}
+    echo ${1/%?/}
 }
 
 createAndCdDir() {
@@ -19,16 +19,10 @@ csFunc() {
   cd $1 && ls
 }
 
-ngrokFunction() {
-    /Applications/ngrok http $1 -auth="admin:b5pFX/4AyxYb5pFX/4AyxY"
-}
-
 # Aliases
 alias lock='automator ~/Library/Services/Start\ Screen\ Saver.workflow &>/dev/null';
 alias pass='password="$(openssl rand -base64 8)"; echo ${password/%?/} | pbcopy; echo Copied to clipboard!'
 alias wipe='cd && clear;'
-alias drop=uploadToDropbox;
->>>>>>> 8e9e9a7e3e939e7c4478c8e4a1f98daa48a43c15
 alias cfp=copyFilePath;
 alias ngrok=ngrokFunction
 alias school='cd ~/Documents/School/Semesters/spring_2020'
@@ -39,9 +33,6 @@ alias cs=csFunc
 alias v='vim ${@:2}'
 alias trash='rmtrash'
 alias rm='echo Use \`trash\`, or the full path i.e. \`/bin/rm\`'
-alias vu="cd ~/ubuntu && vagrant up"
-alias vs="cd ~/ubuntu && vagrant ssh"
-alias vh="cd ~/ubuntu && vagrant halt"
 
 # Git aliases
 alias gapan='git add -N . && git add -p'
@@ -82,4 +73,3 @@ export PATH=${PATH}:""
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
 source /Users/henry/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
