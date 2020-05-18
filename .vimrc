@@ -4,16 +4,24 @@ colorscheme solarized8
 set t_Co=256
 set number
 set ruler
-set tabstop=2
+set tabstop=4
 set expandtab
-set shiftwidth=2
+set shiftwidth=4
 set backspace=2
 set smartindent
 set autoindent
 set nocompatible
-set clipboard:unnamed
 filetype plugin on
 filetype plugin indent on
+
+" Setup clipboard
+if has("clipboard")
+  set clipboard=unnamed " copy to the system clipboard
+
+  if has("unnamedplus") " X11 support
+    set clipboard+=unnamedplus
+  endif
+endif
 
 " Install and open NERDTree by default
 execute pathogen#infect()
