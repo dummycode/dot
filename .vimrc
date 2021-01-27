@@ -1,5 +1,4 @@
 syntax on
-colorscheme solarized8
 
 set t_Co=256
 set number
