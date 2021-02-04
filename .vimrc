@@ -22,12 +22,14 @@ if has("clipboard")
   endif
 endif
 
-" Install and open NERDTree by default
+" Load Pathogen
 execute pathogen#infect()
-call pathogen#helptags()
 
-" Toggle NERDTree on vim and tab enter
+" Toggle NerdTree on '
 autocmd VimEnter * nmap ' :NERDTreeToggle<CR>
+
+" Find current file on "
+autocmd VimEnter * nmap " :NERDTreeFind<CR>
 
 let NERDTreeQuitOnOpen=1
 let NERDTreeWinSize=35
@@ -37,8 +39,4 @@ nnoremap <S-Up> :m-2<CR>
 nnoremap <S-Down> :m+<CR>
 inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
-
-" Go commands
-let g:go_def_mode='gopls'
-let g:go_info_mode='gopls'
 
