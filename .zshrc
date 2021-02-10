@@ -1,6 +1,29 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/henry/.oh-my-zsh
 
+# Run on init
+sh ~/.vim/bundle/vim-solarized8/scripts/solarized8.sh
+eval "$(rbenv init -)"
+
+# Theme
+ZSH_THEME="avit"
+
+# Update frequency
+export UPDATE_ZSH_DAYS=7
+
+# Auto correction for commands
+ENABLE_CORRECTION="true"
+
+# Loading dots
+COMPLETION_WAITING_DOTS="true"
+
+# Plugins
+plugins=(git)
+
+# Path
+export PATH=${PATH}:""
+
+# Functions
 copyFilePath() {
     file="$1"
     greadlink -f $file | pbcopy
@@ -25,51 +48,19 @@ alias pass='password="$(openssl rand -base64 8)"; echo ${password/%?/} | pbcopy;
 alias wipe='cd && clear;'
 alias cfp=copyFilePath;
 alias ngrok=ngrokFunction
-alias school='cd ~/Documents/School/Semesters/spring_2020'
 alias mkdircd=createAndCdDir
 alias lorem='echo "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." | pbcopy'
-alias dockerit='~/Documents/School/Semesters/Fall\ 2019/TA/Docker/cs2110docker.sh -it'
 alias cs=csFunc
 alias v='vim ${@:2}'
 alias trash='rmtrash'
 alias rm='echo Use \`trash\`, or the full path i.e. \`/bin/rm\`'
+alias unsus='xattr -dr com.apple.quarantine'
 
 # Git aliases
 alias gapan='git add -N . && git add -p'
 alias gr='gco -f'
+alias gcamend='git commit --amend'
+alias gpgerrit='git push origin HEAD:refs/for/develop'
 
-# Run on init
-sh ~/.vim/bundle/vim-solarized8/scripts/solarized8.sh
-eval "$(rbenv init -)"
-
-# Theme
-ZSH_THEME="avit"
-
-# Update frequency
-export UPDATE_ZSH_DAYS=7
-
-# Auto correction for commands
-ENABLE_CORRECTION="true"
-
-# Loading dots
-COMPLETION_WAITING_DOTS="true"
-
-# Plugins
-plugins=(git)
-
-# User variables
 source $ZSH/oh-my-zsh.sh
-
-# Path
-export PATH=${PATH}:""
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.zsh
 source /Users/henry/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
