@@ -40,3 +40,11 @@ nnoremap <S-Down> :m+<CR>
 inoremap <S-Up> <Esc>:m-2<CR>
 inoremap <S-Down> <Esc>:m+<CR>
 
+" ctrlp ignores
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store'
+
+if exists("g:ctrlp_user_command")
+  unlet g:ctrlp_user_command
+endif
+set wildignore+=*\\vendor\\**
+
