@@ -46,6 +46,7 @@ alias cs=csFunc
 alias v='vim ${@:2}'
 alias rm='echo Use \`trash\`, or the full path i.e. \`/bin/rm\`'
 alias unsus='xattr -dr com.apple.quarantine'
+alias confirm='read -q "CONFIRM?CONFIRM [y/n]> " && echo'
 
 alias notes="~/notes/2021/09/"
 alias todo="~/todo/2021/09/"
